@@ -33,6 +33,96 @@
 
 
 
+/* style halaman start */
+.container-start{
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+
+.start-panel{
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: black;
+}
+
+.start-panel>div{
+  padding: 20px 50px;
+  margin: 40px 0;
+  box-sizing: border-box;
+  background-color: #ff5b4f;
+  border-radius: 50px;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.start-panel>div:active{
+  background-color: black;
+  color: red;
+}
+
+.anmtion-bg>div{
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 3, 3, .9);
+  box-shadow: 0 0 50px red;
+  
+}
+
+.bola1 {
+  animation: bola1 1.5s infinite alternate ease-in-out;
+}
+
+.bola2 {
+  top: 173px;
+  animation: bola234 1.5s infinite alternate ease-in-out;
+}
+
+.bola3 {
+  top: 313px;
+  animation: bola234 1.5s infinite alternate ease-in-out;
+}
+
+
+.bola4 {
+  top: 445px;
+  animation: bola234 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes bola1{
+  0%{
+    top: 0;
+  }
+
+  100%{
+    top: calc(100vh - 50px);
+  }
+}
+
+@keyframes bola234{
+  0%{
+    left: 0;
+  }
+
+  100%{
+    left: calc(100vw - 50px);
+  }
+}
+
+
 
 /* content */
 body{

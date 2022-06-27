@@ -17,11 +17,29 @@ setTimeout(function() {
 
 
 
-/* start game */
-setTimeout(function(){
-  const dot = document.getElementsByClassName('dot')[0];
-  const dot1 = document.getElementsByClassName('dot')[1];
-  setInterval(function() {
+
+const plyBtn = document.getElementsByClassName('start-btn')[0];
+const cntrStr = document.getElementsByClassName('container-start')[0];
+const dot = document.getElementsByClassName('dot')[0];
+const dot1 = document.getElementsByClassName('dot')[1];
+
+setTimeout(() => {
+  let i = 0;
+  while(i <= 3){
+    document.getElementsByClassName('bola')[i].classList.add('bola' + (i+1));
+    i++;
+  };
+}, 6000);
+
+
+plyBtn.addEventListener('click', function(){
+  cntrStr.style.opacity = '0';
+  cntrStr.style.transition = '1s';
+  setTimeout(function(){
+      cntrStr.style.display = 'none';
+  }, 1000);
+  
+  setInterval(() => {
     dot.style.top = rdmTop() + 'px';
     dot.style.left = rdmLeft() + 'px';
     dot1.style.top = rdmTop() + 'px';
@@ -31,12 +49,15 @@ setTimeout(function(){
   }, 500);
   
   function rdmTop() {
-    const nRandom = Math.floor(Math.random() * 620 + 0);
+    const nRandom = Math.floor(Math.random() * (window.innerHeight - 50) + 0);
     return nRandom;
   };
   
   function rdmLeft() {
-    const nRandom = Math.floor(Math.random() * 325 + 0);
+    const nRandom = Math.floor(Math.random() * (window.innerWidth - 50) + 0);
     return nRandom;
   };
-}, 6000);
+});
+
+
+
