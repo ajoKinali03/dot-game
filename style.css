@@ -81,11 +81,6 @@
   box-shadow: 0 0 50px red;
   
 }
-
-.bola1 {
-  animation: bola1 1.5s infinite alternate ease-in-out;
-}
-
 .bola2 {
   top: 173px;
   animation: bola234 1.5s infinite alternate ease-in-out;

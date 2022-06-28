@@ -25,7 +25,7 @@ const dot1 = document.getElementsByClassName('dot')[1];
 
 setTimeout(() => {
   let i = 0;
-  while(i <= 3){
+  while(i <= 2){
     document.getElementsByClassName('bola')[i].classList.add('bola' + (i+1));
     i++;
   };
