@@ -25,8 +25,8 @@ const dot1 = document.getElementsByClassName('dot')[1];
 
 setTimeout(() => {
   let i = 0;
-  while(i <= 3){
-    document.getElementsByClassName('bola')[i].classList.add('bola' + (i+1));
+  while(i <= 2){
+    document.getElementsByClassName('bola')[i].classList.add('bola' + (i+2));
     i++;
   };
 }, 6000);
@@ -47,9 +47,9 @@ plyBtn.addEventListener('click', function(){
   const dotClear1 = setInterval(() => {
     dot1.style.top = rdmTop() + 'px';
     dot1.style.left = rdmLeft() + 'px';
-  }, 1000);
+  }, 500);
   
-  
+  //belajar object
   let count = 0;
   dot.addEventListener('click', () => {
     console.log('ok');
