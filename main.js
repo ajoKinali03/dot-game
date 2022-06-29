@@ -37,57 +37,71 @@ setTimeout(() => {
   };
 }, 6000);
 
-let spd = 1500;
+const properti = new propertiFunc(1500, 0, 0);
+const properti1 = new propertiFunc(1500, 0, 0);
+
 plyBtn.addEventListener('click', function(){
-  const properti = new propertiFunc(100, 12, 0);
-  
+  console.log('ply btn di tekan');
+  properti.level *= 0;
+  properti.count *= 0;
+  properti1.level *= 0;
+  properti1.count *= 0;
   cntrStr.style.opacity = '0';
   cntrStr.style.transition = '1s';
   setTimeout(function(){
-      cntrStr.style.display = 'none';
+      cntrStr.style.visibility = 'hidden';
   }, 1000);
   
-  function test (){ return properti.speed1};
   
   setInterval(() => {
-    if (properti.count <= 1) {
+    if (properti.count == 0) {
       dot.style.top = rdmTop() + 'px';
       dot.style.left = rdmLeft() + 'px';
     };
-  },500 );
+  },properti.speed);
   
   
   
   setInterval(() => {
-    if(properti.count == 0){
+    if(properti1.count == 0){
       dot1.style.left = rdmLeft() + 'px';
       dot1.style.top = rdmTop() + 'px';
     };
-    if(properti.count == 1){
-      setTimeout(() => {
-        properti.count *= 0;
-      }, 1000);
-    }
-  }, properti.speed);
+  }, properti1.speed);
   
   dot.addEventListener('click', () => {
-     if(properti.count == 1){
+    properti.count++; 
+    properti.level++; 
+    if(properti.count == 1){
        properti.speed -= 200;
-       properti.level -= 1;
+       dot1.style.transition = properti.speed+'ms';
+       console.log(properti.count, 'dot', properti.speed);
     };
-    console.log(properti.count, 'dot', properti.speed);
-    properti.count++;
+    const hsl = properti.level + properti1.level;
+    if(hsl == 2){
+      cntrStr.style.visibility = 'visible';
+      cntrStr.style.opacity = '1';
+      properti1.count *= 0;
+      console.log('berhasil');
+    };
+    
   });
   
   dot1.addEventListener('click', () => {
-    properti.count1++;
-     if (properti.count == 1) {
-       spd -= 1000;
-       dot1.style.transition = properti.speed1+'ms';
-       properti.level -= 1;
+    properti1.count++;
+    properti1.level++;
+     if (properti1.count == 1) {
+       properti1.speed -= 200;
+       dot1.style.transition = properti1.speed+'ms';
+       console.log(properti1.count, 'dot', properti1.speed);
      };
-    console.log(properti.count, 'dot1')
-    
+     const hsl = properti.level + properti1.count;
+     if(hsl == 2){
+      cntrStr.style.visibility = 'visible';
+      cntrStr.style.opacity = '1';
+      properti1.count *= 0;
+      console.log('berhasil');
+     };
   });
   //ketika level sama dengan modulus dua maka tampilkan halaman naik level dan kecepatan interval dan transition di tambah dan juga count di reset
   
