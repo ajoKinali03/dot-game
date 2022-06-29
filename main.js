@@ -53,6 +53,7 @@ plyBtn.addEventListener('click', function(){
   }, 1000);
   
   
+  
   setInterval(() => {
     if (properti.count == 0) {
       dot.style.top = rdmTop() + 'px';
@@ -70,36 +71,44 @@ plyBtn.addEventListener('click', function(){
   }, properti1.speed);
   
   dot.addEventListener('click', () => {
+    properti.level *= 0;
+    properti1.count *= 0;
     properti.count++; 
     properti.level++; 
     if(properti.count == 1){
-       properti.speed -= 200;
+       properti.speed -= 100;
        dot1.style.transition = properti.speed+'ms';
        console.log(properti.count, 'dot', properti.speed);
     };
     const hsl = properti.level + properti1.level;
     if(hsl == 2){
-      cntrStr.style.visibility = 'visible';
-      cntrStr.style.opacity = '1';
-      properti1.count *= 0;
-      console.log('berhasil');
+      setTimeout(() => {
+        cntrStr.style.visibility = 'visible';
+        cntrStr.style.opacity = '1';  
+      }, 1000);
     };
     
   });
   
   dot1.addEventListener('click', () => {
+    properti1.level *= 0;
+    properti1.count *= 0;
     properti1.count++;
     properti1.level++;
      if (properti1.count == 1) {
-       properti1.speed -= 200;
+       properti1.speed -= 100;
        dot1.style.transition = properti1.speed+'ms';
        console.log(properti1.count, 'dot', properti1.speed);
      };
      const hsl = properti.level + properti1.count;
      if(hsl == 2){
-      cntrStr.style.visibility = 'visible';
-      cntrStr.style.opacity = '1';
-      properti1.count *= 0;
+      
+      
+      setTimeout(() => {
+        cntrStr.style.visibility = 'visible';
+        cntrStr.style.opacity = '1';
+      }, 1000);
+      
       console.log('berhasil');
      };
   });
