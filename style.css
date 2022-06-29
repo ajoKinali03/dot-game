@@ -81,6 +81,9 @@
   box-shadow: 0 0 50px red;
   
 }
+
+
+
 .bola2 {
   top: 173px;
   animation: bola234 1.5s infinite alternate ease-in-out;
@@ -95,16 +98,6 @@
 .bola4 {
   top: 445px;
   animation: bola234 1.5s infinite alternate ease-in-out;
-}
-
-@keyframes bola1{
-  0%{
-    top: 0;
-  }
-
-  100%{
-    top: calc(100vh - 50px);
-  }
 }
 
 @keyframes bola234{
@@ -141,7 +134,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 1s;
+  transition: .5s;
   box-shadow: 0 0 70px 5px red; 
 }
 
