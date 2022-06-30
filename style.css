@@ -85,18 +85,21 @@
 
 
 .bola2 {
-  top: 173px;
+  /* top: 173px; */
+  transform: translateY(26vh);
   animation: bola234 1.5s infinite alternate ease-in-out;
 }
 
 .bola3 {
-  top: 313px;
+  /* top: 313px; */
+  transform: translateY(46.5vh);
   animation: bola234 1.5s infinite alternate ease-in-out;
 }
 
 
 .bola4 {
-  top: 445px;
+  /* top: 445px; */
+  transform: translateY(66.5vh);
   animation: bola234 1.5s infinite alternate ease-in-out;
 }
 
@@ -120,6 +123,8 @@ body{
 .container-content{
   position: absolute;
   z-index: 1;
+  width: 100vw;
+  height: 100vh;
 }
 
 
