@@ -70,38 +70,45 @@ plyBtn.addEventListener('click', function(){
   }, properti1.speed);
   
   dot.addEventListener('click', () => {
+    if(properti.level > 1){properti.level *= 0;};
     properti.count++; 
-    properti.level++; 
+    properti.level++;
+    // setInterval(() => {console.log(properti1.level,properti1.count)}, 1000); 
     if(properti.count == 1){
        properti.speed -= 200;
        dot1.style.transition = properti.speed+'ms';
        console.log(properti.count, 'dot', properti.speed);
     };
-    const hsl = properti.level + properti1.level;
+    const hsl = (properti.level + properti1.level) % 2;
+    console.log(hsl);
     if(hsl == 2){
       cntrStr.style.visibility = 'visible';
       cntrStr.style.opacity = '1';
-      properti1.count *= 0;
+      properti.count *= 0;
+      
       console.log('berhasil');
     };
     
   });
   
   dot1.addEventListener('click', () => {
+    if(properti1.level > 1 ){properti1.level *= 0;};
     properti1.count++;
     properti1.level++;
-     if (properti1.count == 1) {
-       properti1.speed -= 200;
-       dot1.style.transition = properti1.speed+'ms';
-       console.log(properti1.count, 'dot', properti1.speed);
-     };
-     const hsl = properti.level + properti1.count;
-     if(hsl == 2){
-      cntrStr.style.visibility = 'visible';
-      cntrStr.style.opacity = '1';
-      properti1.count *= 0;
-      console.log('berhasil');
-     };
+    // setInterval(() => {console.log(properti1.level,properti1.count)}, 1000);
+    if (properti1.count == 1) {
+      properti1.speed -= 200;
+      dot1.style.transition = properti1.speed+'ms';
+      console.log(properti1.count, 'dot', properti1.speed);
+    };
+    const hsl = (properti.level + properti1.level) % 2;
+    console.log(hsl);
+    if(hsl == 0){
+    cntrStr.style.visibility = 'visible';
+    cntrStr.style.opacity = '1';
+    properti1.count *= 0;
+    console.log('berhasil');
+    };
   });
   //ketika level sama dengan modulus dua maka tampilkan halaman naik level dan kecepatan interval dan transition di tambah dan juga count di reset
   
