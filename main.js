@@ -72,7 +72,6 @@ plyBtn.addEventListener('click', function(){
   
   dot.addEventListener('click', () => {
     properti.level *= 0;
-    properti1.count *= 0;
     properti.count++; 
     properti.level++;
     // setInterval(() => {console.log(properti1.level,properti1.count)}, 1000); 
@@ -85,16 +84,17 @@ plyBtn.addEventListener('click', function(){
     console.log(hsl);
     if(hsl == 2){
       setTimeout(() => {
+        //properti.count *= 0;
         cntrStr.style.visibility = 'visible';
         cntrStr.style.opacity = '1';  
-      }, 1000);
+      }, 1300);
     };
     
   });
   
   dot1.addEventListener('click', () => {
     properti1.level *= 0;
-    properti1.count *= 0;
+    
     properti1.count++;
     properti1.level++;
      if (properti1.count == 1) {
@@ -102,14 +102,15 @@ plyBtn.addEventListener('click', function(){
        dot1.style.transition = properti1.speed+'ms';
        console.log(properti1.count, 'dot', properti1.speed);
      };
-     const hsl = properti.level + properti1.count;
+     const hsl = properti.level + properti1.level;
      if(hsl == 2){
       
       
       setTimeout(() => {
+        
         cntrStr.style.visibility = 'visible';
         cntrStr.style.opacity = '1';
-      }, 1000);
+      }, 1300);
       
       console.log('berhasil');
      };
