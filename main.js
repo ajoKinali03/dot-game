@@ -104,8 +104,6 @@ plyBtn.addEventListener('click', function(){
      };
      const hsl = properti.level + properti1.level;
      if(hsl == 2){
-      
-      
       setTimeout(() => {
         
         cntrStr.style.visibility = 'visible';
