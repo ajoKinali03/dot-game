@@ -55,6 +55,20 @@
   color: black;
 }
 
+.htp-btn-link{
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 20px 50px;
+  margin: 40px 0;
+  box-sizing: border-box;
+  background-color: #ff5b4f;
+  border-radius: 50px;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
 .start-panel>div{
   padding: 20px 50px;
   margin: 40px 0;
@@ -66,9 +80,13 @@
   font-family: sans-serif;
 }
 
-.start-panel>div:active{
+.start-panel>div:active, .htp-btn-link:active{
   background-color: black;
   color: red;
+}
+
+.start-panel>div:hover{
+  cursor: pointer;
 }
 
 .anmtion-bg>div{
@@ -143,9 +161,88 @@ body{
   box-shadow: 0 0 70px 5px red; 
 }
 
+.dot:hover{
+  cursor: pointer;
+}
 
 
 
+
+/* score style */
+.container-score{
+  position: absolute;
+  z-index: 3;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  color: rgb(255, 63, 24);
+  font-size: calc(2vw + 10px);
+  visibility: hidden;
+}
+
+.container-score > .text-score{
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-score > .text-score > p{
+  margin-top: 9vh;
+  font-size: 4em;
+}
+
+.container-score > .note{
+  width: 100vw;
+  text-align: center;
+  transform: translateY(12vh);
+}
+
+
+.container-score > .score-mark{
+  outline: solid 2px orange;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  font-size: .8em;
+  position: absolute;
+  top: 7.1vh;
+  font-weight: bold;
+}
+
+.container-score > .score-mark > .mark-text-score{
+  display: flex;
+  justify-content: space-between;
+  width: 73.2vw;
+}
+
+.container-score >.score-mark p{
+  outline: solid 2px orange;
+  margin: 0 10px;
+}
+
+
+.btn-reset{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 45vh;
+  font-size: .8em;
+}
+
+.btn-reset> p{
+  background-color: red;
+  color: black;
+  padding: 20px;
+  border-radius: 50px;
+}
+
+.btn-reset> p:active{
+  background-color: black;
+  color: red;
+}
+
+.btn-reset> p:hover{
+ cursor: pointer;
+}
 
 
 

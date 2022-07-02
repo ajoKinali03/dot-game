@@ -19,7 +19,7 @@ setTimeout(function() {
 
 
 const plyBtn = document.getElementsByClassName('start-btn')[0];
-const htpBtn = document.getElementsByClassName('htp-btn')[0];
+const htpBtnLink = document.getElementsByClassName('htp-btn-link')[0];
 const missBtn = document.getElementsByClassName('container-content')[0];
 const cntrStr = document.getElementsByClassName('container-start')[0];
 const dot = document.getElementsByClassName('dot')[0];
@@ -50,7 +50,7 @@ const properti1 = new propertiFunc(1500, 0, 0);
 
 
 plyBtn.addEventListener('click', function(){
-  console.log('ply btn di tekan');
+  htpBtnLink.removeAttribute('href');
   properti.level *= 0;
   properti.count *= 0;
   properti1.level *= 0;
@@ -88,12 +88,11 @@ plyBtn.addEventListener('click', function(){
       score.hit++;
       properti.speed -= 100;
       dot1.style.transition = properti.speed+'ms';
-      console.log(properti.count, 'dot', properti.speed);
     };
     const hsl = properti.level + properti1.level;
     if(hsl == 2){
       setTimeout(() => {
-        htpBtn.innerHTML = 'surender';
+        htpBtnLink.innerHTML = 'surender';
         plyBtn.innerHTML = 'next level';
         cntrStr.style.visibility = 'visible';
         cntrStr.style.opacity = '1';  
@@ -112,18 +111,15 @@ plyBtn.addEventListener('click', function(){
       score.hit++;
       properti1.speed -= 100;
       dot1.style.transition = properti1.speed+'ms';
-      console.log(properti1.count, 'dot', properti1.speed);
      };
      const hsl = properti.level + properti1.level;
      if(hsl == 2){
       setTimeout(() => {
-        htpBtn.innerHTML = 'surender';
+        htpBtnLink.innerHTML = 'surender';
         plyBtn.innerHTML = 'next level';
         cntrStr.style.visibility = 'visible';
         cntrStr.style.opacity = '1';
       }, 1300);
-      
-      console.log('berhasil');
      };
   });
 
@@ -148,4 +144,25 @@ setInterval(() => {
 //container content unutk menghitung miss player
 missBtn.addEventListener('click', () => {
   score.miss++;
+});
+
+
+// restart game || reload web
+const restart = document.getElementsByClassName('btn-reset')[0];
+restart.addEventListener('click', () => {
+    location.reload();
+});
+
+const halamanScore = document.getElementsByClassName('container-score')[0];
+htpBtnLink.addEventListener('click', () => {
+  const hit = document.getElementsByClassName('hit')[0];
+  const miss = document.getElementsByClassName('miss')[0];
+  const time = document.getElementsByClassName('time')[0];
+
+  hit.innerHTML = score.hit;
+  miss.innerHTML = score.miss;
+  time.innerHTML = score.time;
+
+  halamanScore.style.visibility = 'visible';
+  cntrStr.style.visibility = 'hidden';
 });
